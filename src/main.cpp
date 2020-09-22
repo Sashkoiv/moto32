@@ -11,27 +11,32 @@
 * SRIGHT    | high          | blink
 */
 
-// Config variables
-int st_by_power = 127;
-int fast_blink = 100;
-int slow_blink = 300; // slow_blink > fast_blink
-
 // Input pins
-int LEFT = PA0;
-int RIGHT = PA1;
-int ST_BY = PA2;
-int STOP = PA3;
+int LEFT = PB7;
+int RIGHT = PB6;
+int ST_BY = PB5;
+int STOP = PB4;
 
 // Output pins
-int LED_left = PA4;
-int LED_right = PA5;
+int LED_left = A1;
+int LED_right = A2;
+
+// Config variables
+int st_by_power = 250;
+int fast_blink = 50;
+int slow_blink = 100; // slow_blink > fast_blink
+uint32_t turn_delay = 2000;
 
 // Service variables
-int low_light = 0;
+int low_light = 255;
+int result = 0x0000;
+uint32_t time_flag = 0;
 
 // Prototypes
+int measure();
 int init_check();
-int strob();
+int stop();
+int strobe();
 int left();
 int right();
 int sleft();
@@ -53,40 +58,66 @@ void setup()
 
 void loop()
 {
+  measure();
   init_check();
 
   // Read inputs ans make a decission
 
   if (!digitalRead(ST_BY))
   {
-    low_light = st_by_power;
+    low_light = st_by_power; // Slight light
   }
   else
   {
-    low_light = 0;
+    low_light = 255; // Light off
   }
 
-  switch ((digitalRead(STOP) * 1) + (digitalRead(LEFT) * 2) + +(digitalRead(RIGHT) * 4))
+  switch (result)
   {
-  case 1:
-    strob();
+  case 0: // OFF
+    off();
     break;
-  case 2:
-    left();
-    break;
-  case 4:
-    right();
-    break;
-  case 3:
-    sleft();
-    break;
-  case 5:
+  case 1: // STOP & RIGHT
     sright();
     break;
-  default:
+  case 2: // STOP & LEFT
+    sleft();
+    break;
+  case 3: // STOP when turning and STROBE by default
+    if (millis() > (time_flag + turn_delay))
+    {
+      strobe(); // Strobe signal on stop when going straight
+    }
+    else
+    {
+      stop(); // Just the stop signal in pauses of turn signal blinking
+    }
+    break;
+  case 4: // OFF
+    off();
+    break;
+  case 5: // RIGHT
+    right();
+    break;
+  case 6: // LEFT
+    left();
+    break;
+  case 7: // OFF
+    off();
+    break;
+  default: // NO input or error occurred
     off();
     break;
   }
+}
+
+int measure()
+{
+  result ^= (-(digitalRead(LEFT)) ^ result) & (1UL << 0);
+  result ^= (-(digitalRead(RIGHT)) ^ result) & (1UL << 1);
+  result ^= (-(digitalRead(STOP)) ^ result) & (1UL << 2);
+  // result ^= (-R ^ result) & (1UL << 3);
+  return 0;
 }
 
 int init_check()
@@ -94,60 +125,73 @@ int init_check()
   for (int i = 0; i > 255; i++)
   {
     analogWrite(LED_left, i);
-    analogWrite(LED_left, 256 - i);
-    delay(100);
+    analogWrite(LED_left, 255 - i);
+    delay(300);
   }
-  off();
   return 0;
 }
 
-int strob()
+int stop()
+{
+  analogWrite(LED_left, 0);
+  analogWrite(LED_right, 0);
+  return 0;
+}
+
+int strobe()
 {
   // Fast blink
-  digitalWrite(LED_left, HIGH);
-  digitalWrite(LED_right, HIGH);
-  delayMicroseconds(fast_blink);
-  digitalWrite(LED_left, LOW);
-  digitalWrite(LED_right, LOW);
-  delayMicroseconds(fast_blink);
+  analogWrite(LED_left, 0);
+  analogWrite(LED_right, 0);
+  delay(fast_blink);
 
-  digitalWrite(LED_left, HIGH);
-  digitalWrite(LED_right, HIGH);
-  delayMicroseconds(fast_blink);
-  digitalWrite(LED_left, LOW);
-  digitalWrite(LED_right, LOW);
-  delayMicroseconds(fast_blink);
+  analogWrite(LED_left, 255);
+  analogWrite(LED_right, 255);
+  delay(fast_blink);
 
-  digitalWrite(LED_left, HIGH);
-  digitalWrite(LED_right, HIGH);
-  delayMicroseconds(fast_blink);
-  digitalWrite(LED_left, LOW);
-  digitalWrite(LED_right, LOW);
-  delayMicroseconds(fast_blink);
+  analogWrite(LED_left, 0);
+  analogWrite(LED_right, 0);
+  delay(fast_blink);
+
+  analogWrite(LED_left, 255);
+  analogWrite(LED_right, 255);
+  delay(fast_blink);
+
+  analogWrite(LED_left, 0);
+  analogWrite(LED_right, 0);
+  delay(fast_blink);
+
+  analogWrite(LED_left, 255);
+  analogWrite(LED_right, 255);
+  delay(fast_blink);
 
   // Slow blink if break is not released yet
-  if (digitalRead(STOP) == 0)
+  measure();
+  if (result == 3)
   {
-    digitalWrite(LED_left, HIGH);
-    digitalWrite(LED_right, HIGH);
-    delayMicroseconds(slow_blink);
-    digitalWrite(LED_left, LOW);
-    digitalWrite(LED_right, LOW);
-    delayMicroseconds(slow_blink);
+    analogWrite(LED_left, 0);
+    analogWrite(LED_right, 0);
+    delay(slow_blink);
 
-    digitalWrite(LED_left, HIGH);
-    digitalWrite(LED_right, HIGH);
-    delayMicroseconds(slow_blink);
-    digitalWrite(LED_left, LOW);
-    digitalWrite(LED_right, LOW);
-    delayMicroseconds(slow_blink);
+    analogWrite(LED_left, 255);
+    analogWrite(LED_right, 255);
+    delay(slow_blink);
 
-    digitalWrite(LED_left, HIGH);
-    digitalWrite(LED_right, HIGH);
-    delayMicroseconds(slow_blink);
-    digitalWrite(LED_left, LOW);
-    digitalWrite(LED_right, LOW);
-    delayMicroseconds(slow_blink);
+    analogWrite(LED_left, 0);
+    analogWrite(LED_right, 0);
+    delay(slow_blink);
+
+    analogWrite(LED_left, 255);
+    analogWrite(LED_right, 255);
+    delay(slow_blink);
+
+    analogWrite(LED_left, 0);
+    analogWrite(LED_right, 0);
+    delay(slow_blink);
+
+    analogWrite(LED_left, 255);
+    analogWrite(LED_right, 255);
+    delay(slow_blink);
   }
   else
   {
@@ -155,45 +199,51 @@ int strob()
   }
 
   // Static stop light
-  while (!digitalRead(STOP) and digitalRead(LEFT) and digitalRead(RIGHT))
+  while (result == 3)
   {
-    digitalWrite(LED_left, HIGH);
-    digitalWrite(LED_right, HIGH);
+    analogWrite(LED_left, 0);
+    analogWrite(LED_right, 0);
+    delay(100);
+    measure();
   }
   return 0;
 }
 
 int left()
 {
-  digitalWrite(LED_left, HIGH);
+  analogWrite(LED_left, 0);
   analogWrite(LED_right, low_light);
+  time_flag = millis();
   return 0;
 }
 
 int right()
 {
   analogWrite(LED_left, low_light);
-  digitalWrite(LED_right, HIGH);
+  analogWrite(LED_right, 0);
+  time_flag = millis();
   return 0;
 }
 
 int sleft()
 {
-  digitalWrite(LED_left, LOW);
-  digitalWrite(LED_right, HIGH);
+  analogWrite(LED_left, 255);
+  analogWrite(LED_right, 0);
+  time_flag = millis();
   return 0;
 }
 
 int sright()
 {
-  digitalWrite(LED_left, HIGH);
-  digitalWrite(LED_right, LOW);
+  analogWrite(LED_left, 0);
+  analogWrite(LED_right, 255);
+  time_flag = millis();
   return 0;
 }
 
 int off()
 {
-  digitalWrite(LED_left, LOW);
-  digitalWrite(LED_right, LOW);
+  analogWrite(LED_left, low_light);
+  analogWrite(LED_right, low_light);
   return 0;
 }
