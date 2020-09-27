@@ -1,0 +1,152 @@
+*************************************************************
+FileName = backlight.PcbDoc
+ODB++ directory structure
+*************************************************************
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\matrix\matrix
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\steps\pcb\profile
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\steps\pcb\stephdr
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\steps\pcb\attrlist
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\steps\pcb\layers\top_overlay\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\steps\pcb\layers\top_overlay\attrlist
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\steps\pcb\layers\top_paste\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\steps\pcb\layers\top_paste\attrlist
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\steps\pcb\layers\top_solder\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\steps\pcb\layers\top_solder\attrlist
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\steps\pcb\layers\top_layer\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\steps\pcb\layers\top_layer\attrlist
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\steps\pcb\layers\bottom_layer\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\steps\pcb\layers\bottom_layer\attrlist
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\steps\pcb\layers\bottom_solder\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\steps\pcb\layers\bottom_solder\attrlist
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\steps\pcb\layers\bottom_paste\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\steps\pcb\layers\bottom_paste\attrlist
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\steps\pcb\layers\bottom_overlay\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\steps\pcb\layers\bottom_overlay\attrlist
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\steps\pcb\layers\drill\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\steps\pcb\layers\drill\attrlist
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\steps\pcb\layers\drill\tools
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\steps\pcb\layers\mechanical_1\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\steps\pcb\layers\mechanical_1\attrlist
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\steps\pcb\layers\mechanical_13\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\steps\pcb\layers\mechanical_13\attrlist
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\steps\pcb\layers\comp_+_top\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\steps\pcb\layers\comp_+_top\components
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\steps\pcb\eda\data
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect35.4331x59.0551_300\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect35.4331x59.0551_120\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect35.4331x59.0551_330\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect35.4331x59.0551_150\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect35.4331x59.0551_210\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect35.4331x59.0551_30\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect35.4331x59.0551_240\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect35.4331x59.0551_60\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect35.4331x59.0551_315\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect35.4331x59.0551_135\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect35.4331x59.0551_45\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect35.4331x59.0551_225\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect35.4331x59.0551_180\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect35.4331x59.0551_360\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect41.3386x68.8976_255\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect41.3386x68.8976_75\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect41.3386x68.8976_165\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect41.3386x68.8976_345\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect41.3386x68.8976_225\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect41.3386x68.8976_45\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect41.3386x68.8976_46\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect41.3386x68.8976_226\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect43.4331x67.0551_300\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect43.4331x67.0551_120\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect43.4331x67.0551_330\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect43.4331x67.0551_150\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect43.4331x67.0551_210\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect43.4331x67.0551_30\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect43.4331x67.0551_240\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect43.4331x67.0551_60\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect43.4331x67.0551_315\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect43.4331x67.0551_135\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect43.4331x67.0551_45\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect43.4331x67.0551_225\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect43.4331x67.0551_180\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect43.4331x67.0551_360\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect49.3386x76.8976_255\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect49.3386x76.8976_75\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect49.3386x76.8976_165\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect49.3386x76.8976_345\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect49.3386x76.8976_225\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect49.3386x76.8976_45\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect49.3386x76.8976_46\features
+
+Generated File : D:\moto32\hw\Production_Outputs\2020-10-10_13-20\ODB\odb\symbols\rect49.3386x76.8976_226\features
+
